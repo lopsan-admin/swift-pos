@@ -1,0 +1,167 @@
+#:kivy 2.0.0
+
+<FlatButton@ButtonBehavior+Label>
+    font_size: 14
+
+<HomeWindow>:
+    id: main_window
+    orientation: "vertical"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        id: header
+        size_hint_y: None
+        height: 40
+        canvas.before:
+            Color: 
+                rgba: (19/255.0, 45/255.0, 70/255.0, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label: 
+            text: "Swift-POS 2.0"
+            bold: True
+            size_hint_x: .9
+            color: (1,1,1,1)
+        FlatButton:
+            id: loggedin_user
+            text: "LOPSAN"
+            color: (1,1,1,1)
+    BoxLayout:
+        id: current
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button: 
+            text: "Current Item:"
+            background_color: (19/255.0, 45/255.0, 70/255.0, 1)
+            background_normal: ''
+            size_hint_x: .4
+        Button:
+            id: cur_product
+            text: "Default Product"
+            background_color: (19/255.0, 45/255.0, 70/255.0, 1)
+            background_normal: ''
+        Button:
+            id: cur_price
+            text: "0.00"
+            background_color: (19/255.0, 45/255.0, 70/255.0, 1)
+            background_normal: ''
+            size_hint_x: .2
+
+    BoxLayout:
+        padding: 10
+        BoxLayout:
+            id: product_details
+            orientation: "vertical"
+            size_hint_x: .80
+            spacing: 10
+            BoxLayout:
+                id: product_labels
+                size_hint_y: None
+                height: 40
+                canvas.before:
+                    Color:
+                        rgba: (19/255.0, 45/255.0, 70/255.0, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                FlatButton: 
+                    text: "Qty"
+                    size_hint_x: .1
+                FlatButton:
+                    text: "Product Code"
+                    size_hint_x: .3
+                FlatButton:
+                    text: "Discount"
+                    size_hint_x: .1
+                FlatButton:
+                    text: "Discount %"
+                    size_hint_x: .1
+                FlatButton:
+                    text: "VAT"
+                    size_hint_x: .1
+                FlatButton:
+                    text: "Price"
+                    size_hint_x: .1
+                FlatButton:
+                    text: "Product Total"
+                    size_hint_x: .2
+            BoxLayout:
+                id: product_inputs
+                size_hint_y: None
+                height: 30
+                spacing: 5
+                TextInput:
+                    id: qty_input
+                    size_hint_x: .1
+                    multiline: False
+                TextInput:
+                    id: product_code_input
+                    size_hint_x: .3
+                    multiline: False
+                TextInput:
+                    id: discount_input
+                    size_hint_x: .1
+                    multiline: False
+                TextInput:
+                    id: discount_%_input
+                    size_hint_x: .1
+                    multiline: False
+                TextInput:
+                    id: vat_input
+                    size_hint_x: .1
+                    multiline: False
+                TextInput:
+                    id: price_input
+                    size_hint_x: .1
+                    multiline: False
+                TextInput:
+                    id: product_total_input
+                    size_hint_x: .2
+                    multiline: False
+            BoxLayout:
+                id: add_to_cart
+                orientation: "vertical"
+                BoxLayout:
+                    size_hint_y: None
+                    height: 30
+                    canvas.before:
+                        Color: 
+                            rgba: (19/255.0, 45/255.0, 70/255.0, 1)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+                    Label:
+                        text: "Code"
+                        size_hint_x: .2
+                    Label:
+                        text: "Product Name"
+                        size_hint_x: .3
+                    Label:
+                        text: "Qty"
+                        size_hint_x: .1
+                    Label:
+                        text: "Discount"
+                        size_hint_x: .1
+                    Label:
+                        text: "Price"
+                        size_hint_x: .1
+                    Label:
+                        text: "Product Total"
+                        size_hint_x: .1
+            BoxLayout:
+                id: products
+        BoxLayout:
+            id: preview
+            orienttation: "vertical"
+            size_hint_x: .20
