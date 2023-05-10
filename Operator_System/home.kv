@@ -30,6 +30,7 @@
         FlatButton:
             id: loggedin_user
             text: "LOPSAN"
+            bold: True
             color: (1,1,1,1)
     BoxLayout:
         id: current
@@ -46,17 +47,20 @@
             background_color: (19/255.0, 45/255.0, 70/255.0, 1)
             background_normal: ''
             size_hint_x: .4
+            font_size: 14
         Button:
             id: cur_product
             text: "Default Product"
             background_color: (19/255.0, 45/255.0, 70/255.0, 1)
             background_normal: ''
+            font_size: 14
         Button:
             id: cur_price
             text: "0.00"
             background_color: (19/255.0, 45/255.0, 70/255.0, 1)
             background_normal: ''
             size_hint_x: .2
+            font_size: 14
 
     BoxLayout:
         padding: 10
@@ -101,6 +105,7 @@
                 size_hint_y: None
                 height: 30
                 spacing: 5
+                font_size: 14
                 TextInput:
                     id: qty_input
                     size_hint_x: .1
@@ -109,6 +114,7 @@
                     id: product_code_input
                     size_hint_x: .3
                     multiline: False
+                    on_text_validate: root.update_purchases()
                 TextInput:
                     id: discount_input
                     size_hint_x: .1
@@ -135,6 +141,7 @@
                 BoxLayout:
                     size_hint_y: None
                     height: 30
+                    font_size: 14
                     canvas.before:
                         Color: 
                             rgba: (19/255.0, 45/255.0, 70/255.0, 1)
@@ -144,23 +151,30 @@
                     Label:
                         text: "Code"
                         size_hint_x: .2
+                        font_size: 14
                     Label:
                         text: "Product Name"
                         size_hint_x: .3
+                        font_size: 14
                     Label:
                         text: "Qty"
                         size_hint_x: .1
+                        font_size: 14
                     Label:
                         text: "Discount"
                         size_hint_x: .1
+                        font_size: 14
                     Label:
                         text: "Price"
                         size_hint_x: .1
+                        font_size: 14
                     Label:
                         text: "Product Total"
                         size_hint_x: .1
-            BoxLayout:
-                id: products
+                        font_size: 14
+                GridLayout:
+                    id: products
+                    cols: 1
         BoxLayout:
             id: preview
             orienttation: "vertical"
