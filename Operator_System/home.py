@@ -29,6 +29,18 @@ class HomeWindow(BoxLayout):
             details.add_widget(price)
             details.add_widget(total)
 
+            #Update Preview
+            prod_name = "Product One"
+            prod_price = 1.00
+            preview = self.ids.receipt_preview
+            prev_text = preview.text
+            _prev = prev_text.find("`")
+            if _prev > 0:
+                prev_text =prev_text[:_prev]
+            purchase_total = "`\n\nTotal\t\t\t\t\t\t\t\t0.00"
+            new_preview = "\n".join([prev_text, prod_name+"\t\t\t\t"+str(prod_price),purchase_total])
+            preview.text = new_preview
+
 class HomeApp(App):
     def build(self):
         return HomeWindow()
