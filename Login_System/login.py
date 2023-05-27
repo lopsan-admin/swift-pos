@@ -30,6 +30,4 @@ class LoginApp(App):
         return LoginWindow()
 
 if __name__=="__main__":
-    la = LoginApp()
-    la.run()
-
+    LoginApp().run()

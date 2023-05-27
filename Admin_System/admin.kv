@@ -1,0 +1,90 @@
+<FlatButton@ButtonBehavior+Label>:
+    text: "Default"
+
+<AdminWindow>:
+    id: main_win
+    orientation: "vertical"
+    canvas.before:
+        Color: 
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        id: top_nav
+        size_hint_y: None
+        height: 30
+        canvas.before:
+            Color: 
+                rgba: (19/255.0, 45/255.0, 70/255.0, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FlatButton:
+            id: file_trigger
+            text: "File"
+            on_release: file_dropdown.open(self)
+            size_hint: (.1, None)
+            height: 30
+
+            Widget:
+                on_parent: file_dropdown.dismiss()
+
+                DropDown:
+                    id: file_dropdown
+                    Button:
+                        id: close
+                        text: "Quit"
+                        size_hint_y: None
+                        height: 30
+        
+        Label:
+            text: "Admin Dashboard"
+            bold: True
+            size_hint: (.9, None)
+            height: 30
+    BoxLayout:
+        id: content_nav
+        
+        BoxLayout:
+            id: nav_tabs
+            size_hint_x: .2
+            orientation: "vertical"
+            spacing: 3
+            canvas.before:
+                Color: 
+                    rgba: (19/255.0, 45/255.0, 70/255.0, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            ToggleButton:
+                id: user_toggle
+                text: "Manage Users"
+                size_hint_y: .05
+                state: "down"
+                background_color: (19/255.0, 45/255.0, 70/255.0, 1)
+                background_normal: ""
+            ToggleButton:
+                id: product_toggle
+                text: "Manage Products"
+                size_hint_y: .05
+                background_color: (19/255.0, 45/255.0, 70/255.0, 1)
+                background_normal: ""
+            ToggleButton:
+                id: analysis_toggle
+                text: "Product Analysis"
+                size_hint_y: .05
+                background_color: (19/255.0, 45/255.0, 70/255.0, 1)
+                background_normal: ""
+            Label:
+                id: spacing
+                text: ""
+                size_hint_y: .85
+
+        BoxLayout:
+            id: content
+            size_hint_x: .8
+            

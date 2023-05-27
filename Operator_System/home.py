@@ -75,5 +75,4 @@ class HomeApp(App):
         return HomeWindow()
 
 if __name__=="__main__":
-    ha = HomeApp()
-    ha.run()
+    HomeApp().run()
