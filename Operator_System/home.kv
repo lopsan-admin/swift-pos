@@ -47,20 +47,20 @@
             background_color: (19/255.0, 45/255.0, 70/255.0, 1)
             background_normal: ''
             size_hint_x: .4
-            font_size: 14
+            font_size: 13
         Button:
             id: cur_product
             text: "Default Product"
             background_color: (19/255.0, 45/255.0, 70/255.0, 1)
             background_normal: ''
-            font_size: 14
+            font_size: 13
         Button:
             id: cur_price
             text: "0.00"
             background_color: (19/255.0, 45/255.0, 70/255.0, 1)
             background_normal: ''
             size_hint_x: .2
-            font_size: 14
+            font_size: 13
 
     BoxLayout:
         padding: 10
@@ -105,7 +105,7 @@
                 size_hint_y: None
                 height: 30
                 spacing: 5
-                font_size: 14
+                font_size: 13
                 TextInput:
                     id: qty_input
                     size_hint_x: .1
@@ -141,7 +141,7 @@
                 BoxLayout:
                     size_hint_y: None
                     height: 30
-                    font_size: 14
+                    font_size: 13
                     canvas.before:
                         Color: 
                             rgba: (19/255.0, 45/255.0, 70/255.0, 1)
@@ -151,27 +151,27 @@
                     Label:
                         text: "Code"
                         size_hint_x: .2
-                        font_size: 14
+                        font_size: 13
                     Label:
                         text: "Product Name"
                         size_hint_x: .3
-                        font_size: 14
+                        font_size: 13
                     Label:
                         text: "Qty"
                         size_hint_x: .1
-                        font_size: 14
+                        font_size: 13
                     Label:
                         text: "Discount"
                         size_hint_x: .1
-                        font_size: 14
+                        font_size: 13
                     Label:
                         text: "Price"
                         size_hint_x: .1
-                        font_size: 14
+                        font_size: 13
                     Label:
                         text: "Product Total"
-                        size_hint_x: .1
-                        font_size: 14
+                        size_hint_x: .2
+                        font_size: 13
                 GridLayout:
                     id: products
                     cols: 1
@@ -182,5 +182,20 @@
 
             TextInput:
                 id: receipt_preview
+                font_size: 13
                 readonly: True
                 text: "The Collector\n123 Main St\nNowhere, Space\n\nTel: (555)-123-456\nReceipt No: \nDate: \n\n"
+
+    BoxLayout:
+        id: footer
+        size_hint_y: None
+        height: 30
+        canvas.before:
+            Color:
+                rgba: (19/255.0, 45/255.0, 70/255.0, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            font_size: 13
+            text: "Innovating now, for a brighter future."
